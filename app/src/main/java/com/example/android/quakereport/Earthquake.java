@@ -8,25 +8,28 @@ public class Earthquake {
 
     // define three global variable to hold respective parameter about the earth quake
     /** magnitude of the earthquake */
-    private String mMagnitude;
+    private double mMagnitude;
 
     /** location of the earthquake */
     private String mLocation;
 
     /** date the earthquake occurred */
-    private String mDate;
+    //private Long mDate;
+
+    /** Time of the earthquake */
+    private Long mTimeInMilliseconds;
 
     /**
      * Construct a new {@link Earthquake} Object
      * @param magnitude is the magnitude (size) of the earthquake
      * @param location is the location of the city of the earthquake
-     * @param date is the date on which the earthquake strikes.
+     * @param timeInMilliseconds is the time at which the earthquake strikes. [Jan 01, 1970]
      */
 
-    public Earthquake(String magnitude, String location, String date){
+    public Earthquake(double magnitude, String location, Long timeInMilliseconds){
         mMagnitude = magnitude;
         mLocation = location;
-        mDate = date;
+        mTimeInMilliseconds = timeInMilliseconds;
     }
 
     // Since the global variables are private we need to define getter methods to access them
@@ -35,15 +38,15 @@ public class Earthquake {
     /**
      * @return returns the magnitude of the earthquake
      */
-    public String getMagnitude() {
+    public double getMagnitude() {
         return mMagnitude;
     }
     /** @return returns the location of the earthquake */
     public String getLocation() {
         return mLocation;
     }
-    /** @return returns the date of the earthquake */
-    public String getDate() {
-        return mDate;
+    /** @return returns the time of the earthquake */
+    public Long getTimeInMilliseconds() {
+        return mTimeInMilliseconds;
     }
 }
