@@ -63,10 +63,13 @@ public final class QueryUtils {
                 Double magnitude = properties.getDouble("mag");
                 String location = properties.getString("place");
 
+                //Extract web address of the earth quake URL
+                String url = properties.getString("url");
+
                 // Extract the value of the key called "time"  as Long
                 Long time = properties.getLong("time");
 
-                Earthquake earthquake = new Earthquake(magnitude,location,time);
+                Earthquake earthquake = new Earthquake(magnitude, location, time, url);
                 earthquakes.add(earthquake);
             }
 
